@@ -659,4 +659,28 @@ int main() {
     catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
+
+    Vector<int> v;
+    std::cout << "capasity " << v.Capacity() << ", size " << v.Size() << std::endl;
+    v.Reserve(5);
+    std::cout << "capasity " << v.Capacity() << ", size " << v.Size() << std::endl;
+    v.PushBack(1);
+    std::cout << "capasity " << v.Capacity() << ", size " << v.Size() << std::endl;
+    v.EmplaceBack(3);
+    std::cout << "capasity " << v.Capacity() << ", size " << v.Size() << std::endl;
+    v.Emplace(v.begin() + 1, 2);
+    std::cout << "capasity " << v.Capacity() << ", size " << v.Size() << std::endl;
+    v.Insert(v.end(), 4);
+    std::cout << "capasity " << v.Capacity() << ", size " << v.Size() << std::endl;
+    v.PopBack();
+    std::cout << "v[0] " << v[0] << ", v[1] " << v[1] << ", v[2] " << v[2] << std::endl;
+    v.Erase(v.begin());
+    std::cout << "capasity " << v.Capacity() << ", size " << v.Size() << std::endl;
+    v.Resize(1);
+    v.Resize(4);
+    std::cout << "v[0] " << v[0] << ", v[1] " << v[1] << ", v[2] " << v[2] << ", v[3] " << v[3] << std::endl;
+    Vector<int> vec;
+    v.Swap(vec);
+    std::cout << "capasity " << v.Capacity() << ", size " << v.Size() << std::endl;
+
 }
